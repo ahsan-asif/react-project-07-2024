@@ -25,13 +25,15 @@ const useGames = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
-  // Handling request cancellation
-  const controller = new AbortController();
-
   useEffect(() => {
+    // Handling request cancellation
+    const controller = new AbortController();
+
     setIsLoading(true);
     apiClient
-      .get<FetchGameResponse>("/games", { signal: controller.signal })
+      .get<FetchGameResponse>("/games", {
+        signal: controller.signal,
+      })
       .then((res) => {
         setGames(res.data.results);
         console.log(res.data.results);
