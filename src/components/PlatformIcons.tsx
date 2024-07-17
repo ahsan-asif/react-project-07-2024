@@ -1,4 +1,4 @@
-import { Icon, Text, HStack } from "@chakra-ui/react";
+import { Icon, HStack } from "@chakra-ui/react";
 import {
   FaAndroid,
   FaXbox,
